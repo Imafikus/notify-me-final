@@ -37,6 +37,7 @@ def main():
 
     all_courses_list = get_all_files(SITES_PATH)
     courses = get_links()
+    mails = get_mails()
     
     for course in courses:
         #! IMPORTANT: .rstrip must be used, otherwise some sites won't display properly
@@ -56,7 +57,8 @@ def main():
             
             else:
                 print(course_name, ": file changed")
-                send_mail(html, "aleksatesicteske@gmail.com", course_name)
+                for mail in mails:
+                    send_mail(html, mail.strip(), course_name)
                 
                 #update target file in /sites folder
                 path = os.path.join(SITES_PATH, course_name + ".html")

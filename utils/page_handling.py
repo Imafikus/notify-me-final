@@ -7,6 +7,17 @@ from utils.helper_functions import *
 
 SITES_PATH = os.path.dirname(__file__) + "/../sites"
 FILE_PATH = os.path.dirname(__file__) + "/../urls.json"
+MAIL_PATH = os.path.dirname(__file__) + "/../mails.txt"
+
+def get_mails():
+    """
+    Get mails from mails.txt file
+    """
+    check_if_file_exists(MAIL_PATH)
+
+    with open(MAIL_PATH, "r") as mails_file:
+        mails = mails_file.readlines()
+    return mails
 
 def get_links():
     """
@@ -64,3 +75,6 @@ def init_sites_folder():
             #! IMPORTANT: .rstrip must be called, otherwise some sites might not work.
             course_url = course["url"].rstrip()
             get_data(course_name, course_url, used_for_init=True)
+
+if __name__ == "__main__":
+    print(get_mails())

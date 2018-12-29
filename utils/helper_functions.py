@@ -37,6 +37,6 @@ def check_if_file_exists(path):
     """
 
     if not isfile(path):
-        print("urls file not found, please make one in the same folder where is your main.py")
+        print( path, "not found, please make one in the same folder where is your main.py")
         print("Aborting...")
         exit()

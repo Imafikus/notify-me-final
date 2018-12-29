@@ -20,6 +20,10 @@ Keeps the current versions of the sites, whenever the site info is changed, targ
 ### Urls file
 Keeps the info about the course (course name and course url), it's used for scraping and making files in *sites* folder. File is in JSON format.
 
+### Mails file
+You have to create mails.txt file in the same folder where is your main.py. If you don't do that you'll get an error message displayed when you try to run the program. **Mails should be separated by newlines**, otherwise mailing won't work.
+
+
 ## Running the program
 If you want to manually run the program, you should do that by executing *run_script.sh* file.  
 Recommended usage of the program is to put it into the [cron task scheduler](https://www.howtogeek.com/101288/how-to-schedule-tasks-on-linux-an-introduction-to-crontab-files/) to run on the given interval, so you don't have to run it manually.
